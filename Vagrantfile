@@ -20,6 +20,8 @@ Vagrant.configure("2") do |config|
     vm1_config.vm.hostname = "ubuntu-vm1"
     vm1_config.vm.network "private_network", ip: "192.168.56.101"
 
+    vm1_config.vm.network "public_network"
+
     # Синхронизируем локальную папку с /home/vagrant/shared на ВМ
     vm1_config.vm.synced_folder "./sharedData", "/home/vagrant/shared", type: "rsync"
 
